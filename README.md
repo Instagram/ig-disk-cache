@@ -50,9 +50,9 @@ OptionalStream<EditorOutputStream> outputStream = mDiskCache.edit(key);
 if (outputStream.isPresent()) {
 	try {
 		writeFileToStream(outputStream.get());
-		outputStream.get().commit();
+		output.get().commit();
 	} finally {
-		outputStream.get().abortUnlessCommitted();
+		output.get().abortUnlessCommitted();
 	}
 }
 ```
